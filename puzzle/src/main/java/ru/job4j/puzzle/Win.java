@@ -24,13 +24,11 @@ public class Win {
     }
 
     public static boolean check(int[][] board) {
-        boolean rsl = true;
+        boolean rsl = false;
         for (int i = 0; i < board.length; i++) {
-            if (board[i][i] == 1) {
-                if (!(checkCol(board, i) || checkRow(board, i))) {
-                    rsl = false;
+            if ((board[i][i] == 1) && (checkCol(board, i) || checkRow(board, i))) {
+                    rsl = true;
                     break;
-                }
             }
         }
         return rsl;
